@@ -1,0 +1,13 @@
+<div class="centeringContainer">
+  <div class="card">
+    <img class="logo" src="assets/valuecase_logo_plain_back.png"/>
+    <div class="welcome">Tech Challenge – Angular 🛡</div>
+    <hr/>
+    <div>API available: {{apiAvailable === null ? '⏳' : apiAvailable ? '✅' : '❌'}}</div>
+
+    <ng-template [ngIf]="apiAvailable === true">
+      <hr />
+      <app-file-upload-example />
+    </ng-template>
+  </div>
+</div>

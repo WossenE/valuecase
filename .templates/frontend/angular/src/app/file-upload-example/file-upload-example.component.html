@@ -1,0 +1,16 @@
+<form (submit)="handleFileUpload($event)">
+  <input #fileInput name="file" type="file" (input)="onFileInput($event)">
+  <br />
+  <br />
+
+  <ng-template [ngIf]="!!fileToUpload">
+    <button type="submit">Upload file ⬆️</button>
+  </ng-template>
+</form>
+
+<div *ngIf="!!fileUpload">
+  <hr />
+  File-ID: {{fileUpload.fileId}}
+  <br />
+  File-Path: <a [href]="fileUpload.filePath" target="_blank">{{fileUpload.filePath}}</a>
+</div>

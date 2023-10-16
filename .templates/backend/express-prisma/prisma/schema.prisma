@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:carrots-are-healthy@localhost:6432/postgres?schema=public"
+}
+
+model File {
+  id               String  @default(cuid())
+  filename         String
+  originalFilename String?
+  mimetype         String
+
+  @@id([id])
+}
